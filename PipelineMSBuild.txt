@@ -36,5 +36,10 @@ pipeline{
 				bat 'echo Testing...'
 			}
 		}
+		stage(Deploy){
+			steps{				
+				bat 'echo deploying...'			
+			}
+		}
 	}
 }

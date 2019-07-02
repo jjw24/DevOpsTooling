@@ -2,8 +2,13 @@
 //Scripted pipeline
 node{
 	stage('Build'){
-		def msbuild = 'C:\\Program Files (x86)\\MSBuild\\15.0\\15.0\\Bin\\msbuild.exe'
-		bat "\"${msbuild}\" c:\\testwebsite\\testwebsite.sln /t:clean,rebuild /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+				//restore nuget
+				//bat 'nuget restore SolutionName.sln'
+				//use msbuild plugin
+				//bat "\"${tool 'MSBuild'}\" SolutionName.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+					
+				def msbuild = 'C:\\Program Files (x86)\\MSBuild\\15.0\\15.0\\Bin\\msbuild.exe'
+				bat "\"${msbuild}\" c:\\testwebsite\\testwebsite.sln /t:clean,rebuild /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
 	}
 	stage('Test'){
 	    bat 'echo testing...'
@@ -21,8 +26,8 @@ pipeline{
 	stages{
 		stage('Build')
 		{
-			steps{
-					bat '"C:\\Program Files (x86)\\MSBuild\\15.0\\15.0\\Bin\\msbuild.exe" c:\\testwebsite\\testwebsite.sln /t:clean,rebuild /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}'	
+			steps{					
+				bat '"C:\\Program Files (x86)\\MSBuild\\15.0\\15.0\\Bin\\msbuild.exe" c:\\testwebsite\\testwebsite.sln /t:clean,rebuild /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}'	
 			}
 		}
 		stage('Test')

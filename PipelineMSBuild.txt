@@ -1,0 +1,34 @@
+//Scripted pipeline
+node{
+	stage('Build'){
+		def msbuild = 'C:\\Program Files (x86)\\MSBuild\\15.0\\15.0\\Bin\\msbuild.exe'
+		bat "\"${msbuild}\" c:\\testwebsite\\testwebsite.sln /t:clean,rebuild /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+	}
+	stage('Test'){
+	    bat 'echo testing...'
+	}
+	stage('Deploy'){
+	    bat 'echo deploying...'
+	}
+}
+
+
+//Declarative pipeline
+pipeline{
+	agent any
+	
+	stages{
+		stage('Build')
+		{
+			steps{
+					bat '"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\msbuild.exe" c:\testwebsite\testwebsite.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}'	
+			}
+		}
+		stage('Test')
+		{
+			steps{
+				bat 'echo Testing...'
+			}
+		}
+	}
+}

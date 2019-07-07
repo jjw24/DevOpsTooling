@@ -1,6 +1,6 @@
 Playing around with putting Jenkins in Docker container.
 
-From readings, many concersn were raised with security of user doing it this way as well as the infrastructre neccessisty of having Jenkins in container as oppose to just installing on the build server:
+Concerns were raised around security of user access doing it this way as well as the infrastructre neccessisty of having Jenkins in container as oppose to just installing on the build server:
 https://github.com/jenkinsci/docker/issues/263
 
 Found useful guide after hours of researching

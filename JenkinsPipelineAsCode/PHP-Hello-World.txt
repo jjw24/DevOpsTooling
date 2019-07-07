@@ -1,0 +1,22 @@
+pipeline {
+    agent none
+    stages {
+        stage('Pull Repo'){
+            agent {
+                node{
+                    label ''
+                }
+                
+            }
+            steps{
+                git 'https://github.com/jjw24/DevOpsTooling.git'
+            }
+        }
+        stage('Build Image') {
+            agent any
+            steps {
+                sh 'docker build -t php-hello-world ./Docker/PHP-Hello-World/'
+            }
+        }
+    }
+}

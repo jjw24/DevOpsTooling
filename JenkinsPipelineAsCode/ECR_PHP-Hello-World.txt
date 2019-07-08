@@ -1,0 +1,23 @@
+/*Jenkins plugins required:
+	Pipeline
+	Docker Pipeline Plugin
+	Amazon ECR Plugin
+	
+  Set up ECR credentials via Jenkins Credentials
+*/
+
+node {
+	stage ('Git checkout'){
+		git 'https://github.com/jjw24/DevOpsTooling.git'
+	}
+ 
+	stage ('Docker build'){
+		docker.build ('repository_name','./Docker/PHP-Hello-World/')
+	}
+ 
+	stage ('Docker push'){
+		docker.withRegistry('https://URI', 'ecr:AWS_ECR_REGION:AWS_CREDS_ID_IN_JENKINS') {
+			docker.image('repository_name').push('image_tag')
+		} 
+	}
+}

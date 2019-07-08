@@ -1,0 +1,31 @@
+interactive window inside docker:
+docker exec -it -u root jenkins bash
+
+sh "docker images -a"
+
+To use the Docker plugin:
+stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+
+
+https://github.com/Logimethods/docker-jenkins
+pipeline {
+    agent none
+    stages {
+        stage('mvn') {
+            agent { docker 'maven:3.3.3' }
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('docker') {
+            agent any
+            steps {
+                sh 'docker --version'
+                sh 'docker images -a'
+            }
+        }
+    }
+}

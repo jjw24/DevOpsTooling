@@ -4,6 +4,7 @@
 	Amazon ECR Plugin
 	
   Set up ECR credentials via Jenkins Credentials
+  Reference: https://blog.mikesir87.io/2016/04/pushing-to-ecr-using-jenkins-pipeline-plugin/
 */
 
 node {

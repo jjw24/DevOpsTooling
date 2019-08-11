@@ -1,0 +1,3 @@
+https://github.com/paulbouwer/hello-kubernetes
+
+https://www.google.com.au/search?q=kubernetes+yaml+deployment+hello+world&rlz=1C1GCEA_enAU857AU857&oq=kubernetes+yaml+deployment+hello+world&aqs=chrome..69i57j0.16683j0j4&sourceid=chrome&ie=UTF-8

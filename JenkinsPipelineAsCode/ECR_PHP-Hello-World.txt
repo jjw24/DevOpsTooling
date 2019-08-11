@@ -17,7 +17,7 @@ node {
 	}
  
 	stage ('Docker push'){
-		docker.withRegistry('https://URI', 'ecr:AWS_ECR_REGION:AWS_CREDS_ID_IN_JENKINS') {
+		docker.withRegistry('https://416661790834.dkr.ecr.ap-southeast-2.amazonaws.com', 'ecr:ap-southeast-2:ECR_Jenkins_Creds') {
 			docker.image('repository_name').push('image_tag')
 		} 
 	}

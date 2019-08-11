@@ -1,15 +1,21 @@
-﻿Para{
-    string profileName
-    string awsRegion
+﻿Param(
+    [string] $profileName,
+    [string] $awsRegion
+)
+
+if(!(Get-Module SetupEnvironmentAWS)){
+	Import-Module .\SetupEnvironmentAWS
 }
 
-if(!Get-Module Setup-Environment.pms1){
-    Import-Module Setup-Environment.pms1
+Setup-EnvironmentAWS
+
+if(!(Get-Module -Name AWSPowerShell)){
+    Import-Module AWSPowerShell
 }
 
-Set-AWSCredentials -StoredCredentials profileName
+Set-AWSCredentials -StoredCredentials $profileName
 
-Set-DefaultAWSRegion -Region awsRegion
+Set-DefaultAWSRegion -Region $awsRegion
 
 
 $blah = Get-EC2Image -Owner self

@@ -1,0 +1,12 @@
+{
+  "ID": "152b7adf-9bab-4bb8-af3e-519736680f13",
+  "ActionKeyword": "*",
+  "Name": "AMIFinder",
+  "Description": "Find Amazon Machine Images",
+  "Author": "JJW24",
+  "Version": "1.0.0",
+  "Language": "csharp",
+  "Website": "https://github.com/jjw24/wox",
+  "ExecuteFileName": "Wox.Plugin.AMIFinder.dll",
+  "IcoPath": "Images\\amifinder.png"
+}

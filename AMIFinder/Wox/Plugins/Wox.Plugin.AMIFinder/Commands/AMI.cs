@@ -16,8 +16,6 @@ namespace Wox.Plugin.AMIFinder.Commands
             var workingDirectory = ".\\Plugins\\Wox.Plugin.AMIFinder\\Commands";
             var stringFromOutput = string.Empty;
 
-            var amiImagesList = new List<AMIImage>();
-
             var resultList = new List<Result>();
 
             try
@@ -44,9 +42,9 @@ namespace Wox.Plugin.AMIFinder.Commands
                         if (outputItem != null)
                             stringFromOutput += outputItem.ToString();
                     }
-
-                    amiImagesList = JsonConvert.DeserializeObject<List<AMIImage>>(stringFromOutput);
                 }
+
+                var amiImagesList = JsonConvert.DeserializeObject<List<AMIImage>>(stringFromOutput);
 
                 if (amiImagesList.Any())
                     amiImagesList.ForEach(x =>

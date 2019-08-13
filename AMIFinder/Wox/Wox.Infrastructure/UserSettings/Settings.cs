@@ -55,7 +55,7 @@ namespace Wox.Infrastructure.UserSettings
             }
         }
         public bool LeaveCmdOpen { get; set; }
-        public bool HideWhenDeactive { get; set; } = false;
+        public bool HideWhenDeactive { get; set; } = true;
         public bool RememberLastLaunchLocation { get; set; }
         public bool IgnoreHotkeysOnFullscreen { get; set; }
 

@@ -103,7 +103,7 @@ namespace Wox.Core.Plugin
             });
 
             _contextMenuPlugins = GetPluginsForInterface<IContextMenu>();
-            foreach (var plugin in AllPlugins)
+            foreach (var plugin in AllPlugins.Where(x => !x.Metadata.Disabled))
             {
                 if (IsGlobalPlugin(plugin.Metadata))
                     GlobalPlugins.Add(plugin);

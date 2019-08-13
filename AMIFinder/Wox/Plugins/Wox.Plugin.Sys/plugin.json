@@ -8,5 +8,6 @@
     "Language":"csharp",
     "Website":"http://www.wox.one/plugin",
     "ExecuteFileName":"Wox.Plugin.Sys.dll",
-    "IcoPath":"Images\\lock.png"
+    "IcoPath":"Images\\lock.png",
+	"Disabled": true
 }

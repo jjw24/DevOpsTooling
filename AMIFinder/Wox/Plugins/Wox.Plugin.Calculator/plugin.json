@@ -8,5 +8,6 @@
     "Language":"csharp",
     "Website":"http://www.wox.one/plugin",
     "ExecuteFileName":"Wox.Plugin.Caculator.dll",
-    "IcoPath":"Images\\calculator.png"
+    "IcoPath":"Images\\calculator.png",
+	"Disabled": true
 }

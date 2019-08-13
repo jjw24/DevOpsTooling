@@ -8,5 +8,6 @@
     "Language":"csharp",
     "Website":"http://www.wox.one/plugin",
     "ExecuteFileName":"Wox.Plugin.ControlPanel.dll",
-    "IcoPath":"Images\\ControlPanel.png"
+    "IcoPath":"Images\\ControlPanel.png",
+	"Disabled": true
 }

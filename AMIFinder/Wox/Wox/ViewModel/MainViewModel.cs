@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -411,9 +411,29 @@ namespace Wox.ViewModel
                             var config = _settings.PluginSettings.Plugins[plugin.Metadata.ID];
                             if (!config.Disabled)
                             {
+                                if (plugin.Metadata.Name == "AMI Finder")
+                                {
+                                    var resultLoading = new List<Result>
+                                                        {
+                                                                new Result
+                                                                {
+                                                                        Title = "Loading a list of AMIs",
+                                                                        SubTitle = "Please wait...",
+                                                                        IcoPath = "Images\\down.png",
+                                                                        Score = 8
+                                                                }
+                                                        };
 
-                                var results = PluginManager.QueryForPlugin(plugin, query);
-                                UpdateResultView(results, plugin.Metadata, query);
+                                    UpdateResultView(resultLoading, plugin.Metadata, query);                                    
+                                    var results = PluginManager.QueryForPlugin(plugin, query);
+                                    Results.Clear();
+                                    UpdateResultView(results, plugin.Metadata, query);
+                                }
+                                else
+                                {
+                                    var results = PluginManager.QueryForPlugin(plugin, query);
+                                    UpdateResultView(results, plugin.Metadata, query);
+                                }
                             }
                         });
                     }, _updateToken);

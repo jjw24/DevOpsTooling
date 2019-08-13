@@ -29,7 +29,8 @@ namespace Wox.Plugin.AMIFinder.Commands
                                         new Result
                                         {
                                             Title = x.Name,
-                                            SubTitle = x.Description + " (Created on " + x.CreationDate + ")",
+                                            SubTitle = $"{x.Description} (Created on { x.CreationDate }, " +
+                                                        $"{(DateTime.Today - x.CreationDate.Date).TotalDays} days old)",
                                             IcoPath = "Images/amifinder.png",
                                             Score = 8
                                         }));

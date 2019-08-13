@@ -24,7 +24,8 @@ namespace Wox.Plugin.AMIFinder.Commands
 
                 if (amiImagesList.Any())
                 {
-                    amiImagesList.ForEach(x =>
+                    var amimagesListSorted = amiImagesList.OrderByDescending(x => x.CreationDate).ToList();
+                    amimagesListSorted.ForEach(x =>
                         resultList.Add(
                                         new Result
                                         {

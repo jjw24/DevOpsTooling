@@ -30,24 +30,14 @@ namespace Wox.Plugin.AMIFinder
             InitializeComponent();
             _settings = settings;
             _woxAPI = woxAPI;
-            browserPathBox.Text = _settings.BrowserPath;
+            profileBox.Text = _settings.Profile;
+            regionBox.Text = _settings.Region;
         }
 
         private void OnApplyBTClick(object sender, RoutedEventArgs e)
         {
-            _settings.BrowserPath = browserPathBox.Text;
-        }
-
-        private void OnChooseClick(object sender, RoutedEventArgs e)
-        {
-            var fileBrowserDialog = new OpenFileDialog();
-            fileBrowserDialog.Filter = _woxAPI.GetTranslation("wox_plugin_amifinder_plugin_filter"); ;
-            fileBrowserDialog.CheckFileExists = true;
-            fileBrowserDialog.CheckPathExists = true;
-            if (fileBrowserDialog.ShowDialog() == true)
-            {
-                browserPathBox.Text = fileBrowserDialog.FileName;
-            }
+            _settings.Profile = profileBox.Text;
+            _settings.Region = regionBox.Text;
         }
     }
 }

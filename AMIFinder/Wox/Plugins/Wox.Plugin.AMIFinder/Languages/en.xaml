@@ -4,9 +4,9 @@
 
     <system:String x:Key="wox_plugin_amifinder_plugin_name">AMI Finder</system:String>
     <system:String x:Key="wox_plugin_amifinder_plugin_description">Load your AMI list using this Wox plugin</system:String>
+    <system:String x:Key="wox_plugin_amifinder_plugin_label_profile">Profile:</system:String>
+    <system:String x:Key="wox_plugin_amifinder_plugin_label_region">Region:</system:String>
 
-    <system:String x:Key="wox_plugin_amifinder_plugin_set_tip">Please set your AWS profile:</system:String>
-    <system:String x:Key="wox_plugin_amifinder_plugin_choose">Choose</system:String>
+    <system:String x:Key="wox_plugin_amifinder_plugin_set_tip">Please set your AWS profile and region:</system:String>
     <system:String x:Key="wox_plugin_amifinder_plugin_apply">Apply</system:String>
-    <system:String x:Key="wox_plugin_amifinder_plugin_filter">Application(*.exe)|*.exe|All files|*.*</system:String>
 </ResourceDictionary>

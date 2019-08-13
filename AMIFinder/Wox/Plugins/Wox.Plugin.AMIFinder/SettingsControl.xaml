@@ -16,10 +16,13 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label HorizontalAlignment="Left" Margin="99,22,0,0" VerticalAlignment="Top" Height="43" Width="318" FontSize="20" Content="{DynamicResource wox_plugin_amifinder_plugin_set_tip}"/>
-        <TextBox x:Name="browserPathBox" HorizontalAlignment="Left" Height="34" Margin="35,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="311"/>
-        <Button x:Name="setButton" HorizontalAlignment="Left" Margin="356,247,0,0" VerticalAlignment="Top" Width="110" Height="33" FontSize="20" Click="OnApplyBTClick" Content="{DynamicResource wox_plugin_amifinder_plugin_apply}"/>
-        <Button x:Name="viewButton" HorizontalAlignment="Left" Margin="369,90,0,0" VerticalAlignment="Top" Width="86" Height="34" Click="OnChooseClick" FontSize="20" Content="{DynamicResource wox_plugin_amifinder_plugin_choose}"/>
+        <Label HorizontalAlignment="Center" Margin="80,22,15,0" VerticalAlignment="Top" Height="43" Width="405" FontSize="20" Content="{DynamicResource wox_plugin_amifinder_plugin_set_tip}"/>
+        <TextBox x:Name="profileBox" HorizontalAlignment="Left" Height="26" Margin="90,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="setButton" HorizontalAlignment="Center" Margin="392,220,36,0" VerticalAlignment="Center" Width="72" Height="28" FontSize="16" Click="OnApplyBTClick" Content="{DynamicResource wox_plugin_amifinder_plugin_apply}"/>
+        <TextBox x:Name="regionBox" HorizontalAlignment="Left" Height="26" Margin="279,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <Label HorizontalAlignment="Left" Margin="91,82,0,0" VerticalAlignment="Top" Height="43" Width="145" FontSize="20" Content="{DynamicResource wox_plugin_amifinder_plugin_label_profile}"/>
+        <Label HorizontalAlignment="Left" Margin="280,82,0,0" VerticalAlignment="Top" Height="43" Width="145" FontSize="20" Content="{DynamicResource wox_plugin_amifinder_plugin_label_region}"/>
+
 
     </Grid>
 </UserControl>

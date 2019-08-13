@@ -8,6 +8,7 @@ namespace Wox.Plugin.AMIFinder
 {
     public class Settings
     {
-        public string BrowserPath { get; set; }
+        public string Profile { get; set; }
+        public string Region { get; set; }
     }
 }

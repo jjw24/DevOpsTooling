@@ -24,11 +24,19 @@ namespace Wox.Plugin.AMIFinder
 
         public List<Result> Query(Query query)
         {
-            // convert to settings
-            var profile = "DemoProfile";
-            var region = "ap-southeast-2";
+            if (string.IsNullOrEmpty(_settings.Profile) || string.IsNullOrEmpty(_settings.Region))
+                return new List<Result>
+                        {
+                            new Result
+                            {
+                                Title = "Please specify a profile and region by going to Settings menu",
+                                SubTitle = "The Wox icon can be found in the Taskbar, right click on the icon to go to settings",
+                                IcoPath = "Images/amifinder.png",
+                                Score = 8
+                            }
+                        };
 
-            return profile.LoadList(region);
+            return _settings.Profile.LoadList(_settings.Region);
         }
 
         public Control CreateSettingPanel()

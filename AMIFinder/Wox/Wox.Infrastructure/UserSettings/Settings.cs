@@ -42,7 +42,7 @@ namespace Wox.Infrastructure.UserSettings
         public bool DontPromptUpdateMsg { get; set; }
         public bool EnableUpdateLog { get; set; }
 
-        public bool StartWoxOnSystemStartup { get; set; } = true;
+        public bool StartWoxOnSystemStartup { get; set; } = false;
         public bool HideOnStartup { get; set; }
         bool _hideNotifyIcon { get; set; }
         public bool HideNotifyIcon
@@ -55,7 +55,7 @@ namespace Wox.Infrastructure.UserSettings
             }
         }
         public bool LeaveCmdOpen { get; set; }
-        public bool HideWhenDeactive { get; set; }
+        public bool HideWhenDeactive { get; set; } = false;
         public bool RememberLastLaunchLocation { get; set; }
         public bool IgnoreHotkeysOnFullscreen { get; set; }
 

@@ -1,6 +1,6 @@
 {
   "ID": "0888FD86DE0A4DEE8D62B9B858370588",
-  "ActionKeyword": "*",
+  "ActionKeyword": "get-ami",
   "Name": "AMIFinder",
   "Description": "Find Amazon Machine Images",
   "Author": "JJW24",

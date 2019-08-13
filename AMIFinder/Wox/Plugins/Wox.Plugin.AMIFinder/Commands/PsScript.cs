@@ -22,7 +22,7 @@ namespace Wox.Plugin.AMIFinder.Commands
 
                 while (result.IsCompleted == false)
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                     // time out command?
                 }
 

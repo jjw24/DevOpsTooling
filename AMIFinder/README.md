@@ -3,7 +3,7 @@ The purpose of developing this plugin for Wox
 1. Retrieve a list of AMIs with description
 2. Learn something
 
-Using Wox plugin (src/Wox/Plugins/Wox.Plugin.AMIFinder) to retrieve a list of AMIs that the user owns in the specified region.
+Using Wox plugin (src/Plugins/Wox.Plugin.AMIFinder) to retrieve a list of AMIs that the user owns in the specified region.
 
 This is intended as a demonstration and learning piece for using .Net to launch PowerShell scripts, then retrieve output from the scripts and do something with it.
 
@@ -11,7 +11,7 @@ The plugin needs to be run with Wox, so src code is copied over from the forked 
 
 What is Wox?
 ============
-It is a windows launcher similar to Alfred for Mac OS.
+It is a Windows launcher similar to Alfred for Mac OS.
 
 It is used to quickly launch anything ranging from programs, websites, web searches to a variety of OS operations and more.
 
@@ -36,7 +36,7 @@ Currently it will get a list of AMIs that you own in the specified region. It wi
 
 Using the AMIFinder plugin:
 ===========================
-1. Download the [Wox-AMIFinder-JJW24.exe](https://github.com/jjw24/DevOpsTooling/raw/AMIFinder/Wox-AMIFinder-JJW24.exe)
+1. Download the [Wox-AMIFinder-JJW24.exe](https://github.com/jjw24/DevOpsTooling/raw/master/AMIFinder/Wox-AMIFinder-JJW24.exe)
 
 2. Double click to set up and run.
 
@@ -61,11 +61,11 @@ Using the AMIFinder plugin:
 **Result:**
 ![image](https://user-images.githubusercontent.com/26427004/62990855-d46d1f00-be90-11e9-9064-73c3c3321997.png)
 
-To dismiss/hide the launcher window, press keyboard ESC key(it will continue to pull the list in the background. To bring the window back to foreground, press the hotkey ALT + Space again).
+To dismiss/hide the launcher window, press keyboard ESC key (it will continue to pull the list in the background. To bring the window back to foreground, press the hotkey ALT + Space again).
 
 Good-to-knows:
 ==============
-- The PS that the plugin runs are located at: src/Wox/Plugins/Wox.Plugin.AMIFinder/Commands
+- The PS that the plugin runs are located at: src/Plugins/Wox.Plugin.AMIFinder/Commands
 
 - Due to importing module AWSPowerShell, it takes a around 5 seconds to retrieve the list of AMIs. Will look into improving this in the future.
 
@@ -78,4 +78,4 @@ All credits for Wox launcher go to the code owners at https://github.com/Wox-lau
 
 My forked branch is at https://github.com/jjw24/Wox
 
-As this AMIFinder plugin (src/Wox/Plugins/Wox.Plugin.AMIFinder) is for demo and learning purposes, it will be extracted out later on as a stand-alone plugin that is either kept here or be spun off as a new repo, and the rest of the source code in this folder will be removed.
+As this AMIFinder plugin (src/Plugins/Wox.Plugin.AMIFinder) is for demo and learning purposes, it will be extracted out later on as a stand-alone plugin that is either kept here or be spun off as a new repo, and the rest of the source code in this folder will be removed.

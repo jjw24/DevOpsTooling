@@ -30,7 +30,7 @@ Anything you can do with AWS PowerShell tool, you will be able to do via this Wo
 
 **For the technically minded users, they can tweak the PS scripts that the plugin runs, and for the non-technically minded users, they do not need to deal with any scripting or code, just use keyboard shortcuts to get things spun up in AWS.**
 
-*For now, the plugin will demonstrate the below:
+*For now, the plugin will demonstrate the below:*
 
 What does this plugin do?
 =========================

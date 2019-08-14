@@ -37,26 +37,39 @@ Currently it will get a list of AMIs that you own in the specified region. It wi
 
 Using the AMIFinder plugin:
 ===========================
-Download the Wox-AMIFinder-JJW24.exe(https://github.com/jjw24/DevOpsTooling/raw/AMIFinder/Wox-AMIFinder-JJW24.exe)
+1. Download the Wox-AMIFinder-JJW24.exe(https://github.com/jjw24/DevOpsTooling/raw/AMIFinder/Wox-AMIFinder-JJW24.exe)
 
-Double click to set up and run.
+2. Double click to set up and run.
 
-Once launched you will see an input box in black and grey color . To dismiss it, press keyboard ESC key.
+3. Once launched you will see an input box in black and grey color.
+![image](https://user-images.githubusercontent.com/26427004/62990333-e8b01c80-be8e-11e9-8c36-f722e5cffd9b.png)
 
-Before you go ahead to get your AMI list, you need to go to Wox settings and set your profile and region where you want to retrieve the list from. Do this by right clicking on the Wox icon and select settings. 
+4. Before you go ahead to get your AMI list, you need to go to Wox settings and set your profile and region where you want to retrieve the list from. Do this by right clicking on the Wox icon and select settings. 
+![image](https://user-images.githubusercontent.com/26427004/62990527-b5ba5880-be8f-11e9-87c9-79914d87f92c.png)
 
-Once the menu is opened, go to 'Plugins' and click on AMIFinder and set your AWS profile and region. 
+5. Once the menu is opened, go to 'Plugins' and click on AMIFinder and set your AWS profile and region. 
+![image](https://user-images.githubusercontent.com/26427004/62990626-fb772100-be8f-11e9-846f-5f39693b7093.png)
 
-Please note your profile (from the AWS store) needs to have access to describe/access AMIs, otherwise none will be returned.
+6. Please note your profile (from the AWS store) needs to have access to describe/access AMIs, otherwise none will be returned.
 
-Type in your profile and region and click apply(apparently Wox does not prompt to notify success after clicking apply button, so once you have clicked apply you are golden). Once set, close the settings menu and on you keyboard press ALT + Space (the default shortcut to bring up Wox search box). In the search box type get-ami, you should then after a couple of seconds see the list of your AMIs for the set region.
+7. Type in your profile and region and click apply(apparently Wox does not prompt to notify success after clicking apply button, so once you have clicked apply you are golden). 
+
+8. Once set, close the settings menu and on you keyboard press ALT + Space (the default Windows hotkey to bring up Wox search box). In the search box type get-ami, you should then after a couple of seconds see the list of your AMIs for the set region.
+
+********Loading the AMI list:
+![image](https://user-images.githubusercontent.com/26427004/62990783-86f0b200-be90-11e9-809f-8e3538e4c9e1.png)
+
+********Result:
+![image](https://user-images.githubusercontent.com/26427004/62990855-d46d1f00-be90-11e9-9064-73c3c3321997.png)
+
+To dismiss/hide the launcher window, press keyboard ESC key(it will continue to pull the list in the background. To bring the window back to foreground, press the hotkey ALT + Space again).
 
 Good-to-knows:
 ==============
-The PS that the plugin runs are located at: src/Wox/Plugins/Wox.Plugin.AMIFinder/Commands
+- The PS that the plugin runs are located at: src/Wox/Plugins/Wox.Plugin.AMIFinder/Commands
 
-Due to importing module AWSPowerShell, it takes a around 5 seconds to retrieve the list of AMIs. Will look into improving this in the future.
+- Due to importing module AWSPowerShell, it takes a around 5 seconds to retrieve the list of AMIs. Will look into improving this in the future.
 
-It is assumed you have latest PowerShell 5 environment with PackageManagement module installed (required to use Get-PackageProvider)
+- It is assumed you have latest PowerShell 5 environment with PackageManagement module installed (required to use Get-PackageProvider)
 
-PS scripts are run with PowerShell 5 or below. Future may breakout so there is an option to run with the PowerShell 6
+- PS scripts are run with PowerShell 5 or below. Future may breakout so there is an option to run with the PowerShell 6

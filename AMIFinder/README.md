@@ -18,9 +18,22 @@ It is used to quickly launch anything ranging from programs, websites, web searc
 
 It has a plugin system so a variety of plugins can be added to launch different processes.
 
-Purpose of this AMIFinder plugin:
-=================================
-To get a list of AMIs that you own in the specified region. It will display AMI descriptions, image created date and age, with the future possibility to manage them directly without needing to go into your AWS portal or CLI, ultimately, without your hands needing to leave the keyboard.
+Why use AMIFinder with Wox
+==========================
+- Imagine doing everything that you can quickly and efficiently with a simple interface and keyboard shortcut to 
+  - find the right AMI and launch an EC2 instance from it,
+  - set up your AWS environment, 
+  - manage your instances, 
+  - manage S3 buckets and objects,  
+  - manage local profiles and create new IAM users.
+
+Anything you can do wih AWS PowerShell tool, you will be able to do via this Wox plugin. The beauty is that you can assign shortcut to the plugin so you can do something like open Wox quicklaunch interface and type in 'launch-ec2' and it will run the scripts to do their thing. No need to open PowerShell, quick and easy. For the technical minded users, they can tweak the PS scripts that the plugin runs, and for the non-technical minded users, they do not need to deal with any scripting or code, just use keyboard shortcuts to get things spun up in AWS.
+
+*For now, the plugin will do the below:
+
+What does this AMIFinder plugin do?
+===================================
+Currently it will get a list of AMIs that you own in the specified region. It will display AMI descriptions, image created date and age, with the future possibility to manage them directly without needing to go into your AWS portal or CLI, ultimately, without your hands needing to leave the keyboard.
 
 Using the AMIFinder plugin:
 ===========================
@@ -40,7 +53,7 @@ Type in your profile and region and click apply(apparently Wox does not prompt t
 
 Good-to-knows:
 ==============
-The PS that the plugin runs are located at:
+The PS that the plugin runs are located at: src/Wox/Plugins/Wox.Plugin.AMIFinder/Commands
 
 Due to importing module AWSPowerShell, it takes a around 5 seconds to retrieve the list of AMIs. Will look into improving this in the future.
 

@@ -31,8 +31,8 @@ Anything you can do wih AWS PowerShell tool, you will be able to do via this Wox
 
 *For now, the plugin will do the below:
 
-What does this AMIFinder plugin do?
-===================================
+What does this plugin do?
+=========================
 Currently it will get a list of AMIs that you own in the specified region. It will display AMI descriptions, image created date and age, with the future possibility to manage them directly without needing to go into your AWS portal or CLI, ultimately, without your hands needing to leave the keyboard.
 
 Using the AMIFinder plugin:

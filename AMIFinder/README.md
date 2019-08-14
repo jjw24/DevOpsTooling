@@ -5,7 +5,7 @@ The purpose of developing this plugin for Wox
 
 Using Wox plugin (src/Wox/Plugins/Wox.Plugin.AMIFinder) to retrieve a list of AMIs that the user owns in the specified region.
 
-This is intended as a demonstration and learning piece for using .Net to launch PowerShell scripts, then retrieve output from the script and do something with it.
+This is intended as a demonstration and learning piece for using .Net to launch PowerShell scripts, then retrieve output from the scripts and do something with it.
 
 The plugin needs to be run with Wox, so src code is copied over from the forked branch: https://github.com/jjw24/Wox/tree/dev
 

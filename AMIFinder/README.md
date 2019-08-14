@@ -26,7 +26,7 @@ Why use AMIFinder with Wox
   - manage S3 buckets and objects,  
   - manage local profiles and create new IAM users.
 
-Anything you can do with AWS PowerShell tool, you will be able to do via this Wox plugin. The beauty is that you can assign shortcut to the plugin so you can do something like open Wox quick-launch interface and type in 'launch-ec2' and it will run the scripts to do their thing. No need to open PowerShell, quick and easy. For the technical minded users, they can tweak the PS scripts that the plugin runs, and for the non-technical minded users, they do not need to deal with any scripting or code, just use keyboard shortcuts to get things spun up in AWS.
+Anything you can do with AWS PowerShell tool, you will be able to do via this Wox plugin. The beauty is that you can assign shortcut to the plugin so you can do something like open Wox quick-launch interface and type in 'launch-ec2' and it will run the scripts to do their thing. No need to open PowerShell, quick and easy. **For the technically minded users, they can tweak the PS scripts that the plugin runs, and for the non-technically minded users, they do not need to deal with any scripting or code**, just use keyboard shortcuts to get things spun up in AWS.
 
 *For now, the plugin will demonstrate the below:
 

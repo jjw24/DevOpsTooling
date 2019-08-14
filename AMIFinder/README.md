@@ -23,3 +23,10 @@ Once the menu is opened, go to 'Plugins' and click on AMIFinder and set your AWS
 Please note your profile (from the AWS store) needs to have access to describe/access AMIs, otherwise none will be returned.
 
 Type in your profile and region and click apply(apparently Wox does not prompt to notify success after clicking apply button, so once you have clicked apply you are golden). Once set, close the settings menu and on you keyboard press ALT + Space (the default shortcut to bring up Wox search box). In the search box type get-ami, you should then after a couple of seconds see the list of your AMIs for the set region.
+
+Good-to-knows:
+The PS that the plugin runs are located at:
+
+Due to importing module AWSPowerShell, it takes a around 5 seconds to retrieve the list of AMIs. Will look into improving this in the future.
+
+It is assumed you have latest PowerShell 5 environment with PackageManagement

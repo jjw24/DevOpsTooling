@@ -50,7 +50,7 @@ To dismiss/hide the launcher window, press keyboard ESC key (it will continue to
 
 Building this project in Visual Studio
 ======================================
-Thhis project can not be built or started on its own. It needs to be included into the [Wox](https://github.com/jjw24/Wox) solution to be compiled and run.
+This project can not be built or started on its own. It needs to be included into the [Wox](https://github.com/jjw24/Wox) solution to be compiled and run.
 
 1. Clone the [Wox repo](https://github.com/jjw24/Wox)
 2. Open the solution in Visual Studio and add this project to the Plugins folder

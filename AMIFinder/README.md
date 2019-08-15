@@ -1,40 +1,22 @@
-The purpose of developing this plugin for Wox
-=========================================
-1. Retrieve a list of AMIs with description
-2. Learn something
+The purpose of this Wox plugin
+=============================
+To retrieve a list of Amazon Machine Images that the user owns in the region.
 
-Using Wox plugin ([src/Plugins/Wox.Plugin.AMIFinder](https://github.com/jjw24/DevOpsTooling/tree/master/AMIFinder/src/Plugins/Wox.Plugin.AMIFinder)) to retrieve a list of AMIs that the user owns in the specified region.
+This plugin needs to be run with Wox. 
 
-This is intended as a demonstration and learning piece for using .Net to launch PowerShell scripts, then retrieve output from the scripts and do something with it.
-
-The plugin needs to be run with Wox, so src code is copied over from the forked branch: https://github.com/jjw24/Wox/tree/dev
+Most recent build with Wox included: [Wox-AMIFinder-JJW24.exe](https://github.com/jjw24/DevOpsTooling/raw/master/AMIFinder/Wox-AMIFinder-JJW24.exe)
 
 What is Wox?
 ============
 [Wox](https://github.com/Wox-launcher/Wox) is a Windows launcher similar to Alfred for Mac OS.
 
-It is used to quickly launch anything ranging from programs, websites, web searches to a variety of OS operations and more.
+It is used to quickly launch anything ranging from applications, websites, web searches to OS commands and more.
 
 It has a plugin system so a variety of plugins can be added to launch different processes.
 
-Why use AMIFinder with Wox
-==========================
-- Imagine doing everything that you can quickly and efficiently with a simple interface and keyboard shortcuts to 
-  - find the right AMI and launch an EC2 instance from it,
-  - set up your AWS environment, 
-  - manage your instances, 
-  - manage S3 buckets and objects,  
-  - manage local profiles and create new IAM users.
-
-Anything you can do with AWS PowerShell tool, you will be able to do via this Wox plugin. The beauty is that you can assign shortcut to the plugin so you can do something like open Wox quick-launch interface and type in 'launch-ec2' and it will run the scripts to do their thing. No need to open PowerShell, quick and easy. 
-
-**For the technically minded users, they can tweak the PS scripts that the plugin runs, and for the non-technically minded users, they do not need to deal with any scripting or code, just use keyboard shortcuts to get things spun up in AWS.**
-
-*For now, the plugin will demonstrate the below:*
-
 What does this plugin do?
 =========================
-Currently it will get a list of AMIs that you own in the specified region. It will display AMI descriptions, image created date and age, with the future possibility to manage them directly without needing to go into your AWS portal or CLI, ultimately, without your hands needing to leave the keyboard.
+Currently it will get a list of AMIs that you own in the specified region. It will display AMI descriptions, image created date and age.
 
 Using the AMIFinder plugin:
 ===========================
@@ -65,9 +47,18 @@ Using the AMIFinder plugin:
 
 To dismiss/hide the launcher window, press keyboard ESC key (it will continue to pull the list in the background. To bring the window back to foreground, press the hotkey ALT + Space again).
 
+
+Building this project in Visual Studio
+======================================
+Thhis project can not be built or started on its own. It needs to be included into the [Wox](https://github.com/jjw24/Wox) solution to be compiled and run.
+
+1. Clone the [Wox repo](https://github.com/jjw24/Wox)
+2. Open the solution in Visual Studio and add this project to the Plugins folder
+2. Open up Project Depencies and set Wox to include this project
+
 Good-to-knows:
 ==============
-- The PS that the plugin runs are located at: [src/Plugins/Wox.Plugin.AMIFinder/Commands](https://github.com/jjw24/DevOpsTooling/tree/master/AMIFinder/src/Plugins/Wox.Plugin.AMIFinder/Commands)
+- The PS that the plugin runs are located at: [Wox.Plugin.AMIFinder/Commands](https://github.com/jjw24/DevOpsTooling/tree/master/AMIFinder/Wox.Plugin.AMIFinder/Commands)
 
 - Due to importing module AWSPowerShell, it takes a around 5 seconds to retrieve the list of AMIs. Will look into improving this in the future.
 
@@ -79,5 +70,3 @@ PLEASE NOTE:
 All credits for Wox launcher go to the code owners at https://github.com/Wox-launcher/Wox
 
 My forked branch is at https://github.com/jjw24/Wox
-
-As this AMIFinder plugin ([src/Plugins/Wox.Plugin.AMIFinder](https://github.com/jjw24/DevOpsTooling/tree/master/AMIFinder/src/Plugins/Wox.Plugin.AMIFinder)) is for demo and learning purposes, it will be extracted out later on as a stand-alone plugin that is either kept here or be spun off as a new repo, and the rest of the source code in this folder will be removed.

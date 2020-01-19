@@ -1,0 +1,1 @@
+docker run --rm -it -p 8000:80 mcr.microsoft.com/dotnet/core/samples:aspnetapp

@@ -11,3 +11,6 @@ Main points discussed:
 - key here is mounting /var/run/docker.sock from the host machine to the same location inside the container: 
 	-v /var/run/docker.sock:/var/run/docker.sock
 - We'll need to install the Docker binaries inside the container, install the Docker binaries, some prerequisites, configure the official Docker apt repositories and install the latest Docker CE binaries.
+
+Docker img
+PWD in CMD console, search 'password'

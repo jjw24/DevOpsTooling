@@ -9,7 +9,15 @@ pipeline {
                 
             }
             steps{
-                git 'https://github.com/jjw24/DevOpsTooling.git'
+				sh '''
+				if [ -d .git ]; then
+				  git status;
+				  git pull origin master;
+				else
+				  
+				  git clone https://github.com/jjw24/DevOpsTooling.git .;
+				fi;
+				'''
             }
         }
         stage('Docker build') {

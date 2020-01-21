@@ -1,24 +1,36 @@
 pipeline {
     agent any
     stages {
-        stage('Pull Repo'){
+        stage('Pull Repo Master'){
             steps{
 				sh '''
-				if [ -d .git ]; then
-				  git status;
-				  git pull origin master;
-				else
-				  
-				  git clone https://github.com/jjw24/DevOpsTooling.git .;
-				fi;
+    				if [ -d .git ]; then
+    				  git status;
+    				  git pull origin master;
+    				else
+    				  
+    				  git clone https://github.com/jjw24/DevOpsTooling.git .;
+    				fi;
 				'''
             }
         }
-        stage('Docker build') {
+        stage('Docker Build Image') {
             steps {
                 script{
                     docker.build ('webappnetcore3','./Docker/WebAppCore3/')
                 }
+            }
+        }
+        stage('Test build') {
+            steps {
+                sh '''
+                    containerId=$(docker run -d -p 8000:80 webappnetcore3); 
+                    
+                    hostIP=$(/sbin/ip route|awk '/default/ { print $3 }')
+                    output=$(curl -is $hostIP:8000 | head -1)
+                    echo $output;
+                '''
+                
             }
         }
     }

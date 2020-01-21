@@ -1,13 +1,7 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Pull Repo'){
-            agent {
-                node{
-                    label ''
-                }
-                
-            }
             steps{
 				sh '''
 				if [ -d .git ]; then
@@ -21,7 +15,6 @@ pipeline {
             }
         }
         stage('Docker build') {
-            agent any
             steps {
                 script{
                     docker.build ('webappnetcore3','./Docker/WebAppCore3/')

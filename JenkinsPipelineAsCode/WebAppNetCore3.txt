@@ -26,9 +26,10 @@ pipeline {
                 sh '''
                     containerId=$(docker run -d -p 8000:80 webappnetcore3); 
                     
-                    hostIP=$(/sbin/ip route|awk '/default/ { print $3 }')
-                    output=$(curl -is $hostIP:8000 | head -1)
-                    echo $output;
+					sleep 5
+                    internalHostIP=$(ip route show default | awk '/default/ {print $3}')
+    				output=$(curl -is $internalHostIP:8000 | head -1)
+    				echo $output
                 '''
                 
             }

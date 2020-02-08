@@ -1,0 +1,81 @@
+// In Jenkins:
+// 1. Requires the Pipeline: GitHub plugin installed. https://github.com/jenkinsci/pipeline-github-plugin To use pullRequest.mergeable call
+// 2. Requires the GitHub Pull Request Comment Build plugin. https://github.com/jenkinsci/github-pr-comment-build-plugin To trigger on pull request reviews
+
+
+def approvedPR = false
+
+pipeline {
+  agent { 
+    label 'BUILD_SERVER_NAME'
+  }
+  stages {
+    stage('Build') {
+      agent { 
+        label 'BUILD_SERVER_NAME'
+      }
+      steps {
+        bat 'COMMANDLINE_BUILD_YOUR_APP'
+      }
+    }
+    stage('Merge PR') {
+        agent { 
+          label 'DEPLOY_SERVER_NAME OR ANY'
+        }
+        steps {
+            script {
+              
+              // CHANGE_ID is set only for pull requests, so it is safe to determine pullRequest is created if it exits
+              if (env.CHANGE_BRANCH != 'master' && env.CHANGE_ID && pullRequest.mergeable) {
+                  
+                  for (review in pullRequest.reviews) {
+                  
+                    echo "${review.user} has a review in ${review.state} state for the Pull Request."
+                    
+                    if (review.state == "APPROVED") {
+                      approvedPR = true
+                      echo "pr merge state variable is ${approvedPR}"
+                    } else {
+                      // if more than one review, all should be approved before it can be merged
+                      approvedPR = false
+                      echo "pr merge state variable is ${approvedPR}"
+                    }                      
+                  }
+                  
+                  if (approvedPR == true) {
+                    echo "Proceeding to merge the PR."
+                    pullRequest.merge('Automatically merged after approval')
+                  } else {
+                    echo "Last review left on PR is not approved"
+                  }
+
+              } else {
+                  echo "Pull Request is not ready to be merged."
+              }
+            }
+        }
+    }
+    stage('Deploy Production') {
+        agent { 
+          label 'DEPLOY_SERVER_NAME'
+        }
+        steps {
+          
+          bat 'COMMANDLINE_BUILD_YOUR_APP'
+          bat 'rmdir /S /Q PRODUCTION_DIRECTORY_TO_REMOVE'
+          
+          // Robocopy does not adhere to the standard that an exit code other then 0 means a failed build. 
+          // You need to evaluate the robocopy exit code and end your script with exit 0 or exit 1 depending on the success of robocopy.
+          // In summary all exit codes up to 3 for robocopy is fine.
+          bat """
+                 robocopy BUILD_OUTPUT_FOLDER PRODUCTION_FOLDER /COPYALL /E
+                 @echo robocopy exit code: %ERRORLEVEL%
+                 @if %ERRORLEVEL% GTR 3 ( echo robocopy ERROR )
+                 @if %ERRORLEVEL% GTR 3 ( exit %ERRORLEVEL% )
+                 @set ERRORLEVEL=0
+          """
+          
+        }
+    }
+  }
+}

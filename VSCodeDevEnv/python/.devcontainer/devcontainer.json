@@ -32,7 +32,14 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-python.python",
-		"kevinrose.vsc-python-indent"
+		"kevinrose.vsc-python-indent",
+		"ms-pyright.pyright",
+		"visualstudioexptteam.vscodeintellicode",
+		"tyriar.sort-lines",
+		"sirtori.indenticator",
+		"mhutchie.git-graph",
+		"eamodio.gitlens",
+		"deerawan.vscode-dash"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

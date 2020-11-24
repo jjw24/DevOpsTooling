@@ -19,7 +19,13 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-dotnettools.csharp"
+		"ms-dotnettools.csharp",
+		"ms-vscode.vs-keybindings",
+		"formulahendry.dotnet-test-explorer",
+		"k--kato.docomment",
+		"formulahendry.dotnet",
+		"jmrog.vscode-nuget-package-manager",
+		"icsharpcode.ilspy-vscode"		
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

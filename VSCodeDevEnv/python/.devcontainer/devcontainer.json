@@ -33,7 +33,6 @@
 	"extensions": [
 		"ms-python.python",
 		"kevinrose.vsc-python-indent",
-		"ms-pyright.pyright",
 		"visualstudioexptteam.vscodeintellicode",
 		"tyriar.sort-lines",
 		"sirtori.indenticator",

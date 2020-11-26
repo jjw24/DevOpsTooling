@@ -39,6 +39,7 @@
 		"sirtori.indenticator",
 		"mhutchie.git-graph",
 		"eamodio.gitlens",
+		"ms-python.vscode-pylance",
 		"deerawan.vscode-dash"
 	],
 

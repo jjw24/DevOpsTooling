@@ -1,3 +1,5 @@
+gem install ruby-debug-ide
+
 To actually run the debugger, open the terminal and cd to the root of your project. Once there, run the following command. Please notice that you need to include the path to the file you want to run.
 
 rdebug-ide --host 127.0.0.1 --port 1234 ./path_to_file/file.rb

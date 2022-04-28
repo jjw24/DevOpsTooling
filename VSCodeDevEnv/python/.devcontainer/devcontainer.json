@@ -37,7 +37,8 @@
 		"mhutchie.git-graph",
 		"eamodio.gitlens",
 		"ms-python.vscode-pylance",
-		"deerawan.vscode-dash"
+		"deerawan.vscode-dash",
+		"trixnz.go-to-method"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

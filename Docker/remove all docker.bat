@@ -1,9 +1,9 @@
 FOR /f "tokens=*" %%i IN ('docker ps -q') DO docker stop %%i
 
-CALL docker system prune -f
+CALL docker system prune -a -f
 CALL docker container prune -f
 CALL docker image prune -a -f
-CALL docker volume prune -f
+CALL docker volume prune -a -f
 CALL docker network prune -f
 PAUSE
 

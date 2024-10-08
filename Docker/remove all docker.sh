@@ -2,13 +2,15 @@
 
 docker stop $(docker ps -q) &&
 
-docker system prune -a -f &&
+docker system prune -a --volumes -f
+
+# Separately
 docker container prune -f &&
 docker image prune -a -f &&
 docker volume prune -a -f &&
 docker network prune -f &&
 
- read -n1 -r -p "Press any key to continue..." key
+read -n1 -r -p "Press any key to continue..." key
 
 # List all containers and their attached images and status
 docker ps -a
